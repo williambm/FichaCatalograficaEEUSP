@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ficha Catalográfica</title>
+
+   
+    <!--carrega CSS bootstrap-->
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.css">
+     <!--carrega CSS -->
+    <link rel="stylesheet" href="./src/estilo.css">
+    <!--insere o Bootstrap -->
+    <script type="text/javascript" src="./src/bootstrap/js/bootstrap.min.js"></script>
+    <!--insere o JQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!--insere o JSPDF -->
+    <script type="text/javascript" src="./src/jspdf.min.js"></script>
+    <!--insere o HTML2Canvas -->
+    <script type="text/javascript" src="./src/html2canvas.js"></script>
+    <!--Função de Gerar PDF-->
+    <script type="text/javascript">
+    
+        function genPDF(){
+            //Cria um objeto do tipo jsPDF
+            var doc = new jsPDF();
+            //Coleta os values do form
+            //nome do aluno
+            var nomeAluno = document.getElementById('inputNome').value;
+            var nomeMeioAluno = document.getElementById('inputNomeMeio').value;
+            var nomeUltimoAluno = document.getElementById('inputNomeUltimo').value;
+
+            //Informações do orientador E coorientador
+            var nomeOrientador = document.getElementById('inputNomeOrientador').value;
+            var tituloOrientador = document.getElementById('tituloOrientador').value;
+            var nomeCoorientador = document.getElementById('inputNomeOrientador').value;
+            var tituloCoorientador = document.getElementById('tituloCoorientador').value;
+
+            //Informações da Obra
+            var trabalhoTitulo = document.getElementById('inputTituloTrabalho').value;
+            var trabalhoSubtitulo = document.getElementById('inputSubtituloTrabalho').value;
+            var trabalhoAno = document.getElementById('inputAno').value;
+            var trabalhoPaginas = document.getElementById('inputNumeroPaginas').value;
+            var trabalhoTipo = document.getElementById('trabalho').value;
+            var trabalhoAreaConcentracao = document.getElementById('areaConcentracao').value;
+
+            //Assuntos
+            var assunto1 = document.getElementById('inputAssunto1').value;
+            var assunto2 = document.getElementById('inputAssunto2').value;
+            var assunto3 = document.getElementById('inputAssunto3').value;
+            var assunto4 = document.getElementById('inputAssunto4').value;
+            var assunto5 = document.getElementById('inputAssunto5').value;
+
+
+            //window.open('./ficha.html');
+           
+            
+            //Formata a fonte de saída
+           doc.setFont("arial");
+           doc.setFontSize(12);
+           doc.text (30,20,nomeAluno +" , " + nomeMeioAluno +" , " + nomeUltimoAluno);
+           doc.text (40,20,nomeOrientador +" , " + tituloOrientador);
+           doc.save('a.pdf');
+            /* bloco comentador para testar 
+                //Pegar o elemento do HTML EXATAMENTE como ele é
+                html2canvas(document.body).then(function(canvas) {
+
+                    //Cria uma imagem do screenshot capturado
+                    var img = canvas.toDataURL("image/png");
+                    //Adiciona a imagem no PDF e passa o tamanho.
+                    doc.addImage(img, 'JPEG',20,20);
+                    doc.save('Teste.pdf'); // salva PDF
+                });
+            */            
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" align="center" >
+                <h1>Ficha Catalográfica da EEUSP</h1>
+                <span class="campoObrigatorioSpam">* Campos Obrigatórios</span>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <form action="javascript:genPDF()">
+        <div class="jumbotron">
+            <div class="row">
+
+                <h2 class="h2Form">Informações Pessoais:</h2>
+                
+            </div>
+            <div class="form-row justify-content-center" >
+
+                <div class="form-group col-3"  align="center">
+                    <label for="inputNome">Nome *</label>
+                    <input type="text" class ="form-control " name="nome" id="inputNome" required>
+                </div>
+            
+                <div class="form-group col-3" align="center">
+                        <label for="inputNomeMeio">Sobrenome intermediário</label>
+                        <input type="text" class ="form-control" name="nomeMeio" id="inputNomeMeio" >
+                </div>
+
+                <div class="form-group col-3" align="center">
+                        <label for="inputNomeUltimo"> Último Sobrenome * </label>
+                        <input type="text" class ="form-control" name="nomeUltimo" id="inputNomeUltimo" required>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="jumbotron">
+            <div class="row">
+                    
+                <h2 class="h2Form">Informações do(a) Orientador(a):</h2>
+                    
+            </div>
+            <div class="form-row justify-content-center" >
+    
+                <div class="form-group col-5"  align="center">
+                    <label for="inputNome">Nome completo *</label>
+                    <input type="text" class ="form-control " name="nomeOrientador" id="inputNomeOrientador" required>
+                </div>                
+    
+                <div class="form-group col-5" align="center">
+                        <label for="inputNomeUltimo"> Titulação * </label>
+                        <select class ="form-control" id="tituloOrientador" placeholder="Selecione a titulação do orientador(a)">
+                            <option value="Prof.ª Dr.ª">Prof.ª Dr.ª</option>
+                            <option value="Prof. Dr.">Prof. Dr.</option>                               
+                        </select>
+                </div>
+                    
+                </div>
+                <div class="row">
+                    
+                    <h2 class="h2Form">Informações do(a) Coorientador(a):</h2>
+                        
+                </div>
+                <div class="form-row justify-content-center" >
+        
+                    <div class="form-group col-5"  align="center">
+                        <label for="inputNome">Nome completo *</label>
+                        <input type="text" class ="form-control " name="nomeCoorientador" id="inputNomeOrientador" required>
+                    </div>                
+        
+                    <div class="form-group col-5" align="center">
+                        <label for="inputNomeUltimo"> Titulação * </label>
+                            <select class ="form-control" id="tituloCoorientador" placeholder="Selecione a titulação do orientador(a)">
+                                <option value="Prof.ª Dr.ª">Prof.ª Dr.ª</option>
+                                <option value="Prof. Dr.">Prof. Dr.</option>                               
+                            </select>
+                    </div>
+                        
+                </div>
+        </div>
+        <div class="jumbotron">
+            <div class="row">
+
+                <h2 class="h2Form">Informações da Obra:</h2>
+                
+            </div>
+            <div class="form-row justify-content-center" >
+            
+                <div class="form-group col-10"  align="center">
+                    <label for="inputNome">Título do trabalho *</label>
+                    <input type="text" class ="form-control " name="nome" id="inputTituloTrabalho" required>
+                </div>
+            </div>
+
+            <div class="form-row justify-content-center" >
+            
+                <div class="form-group col-10"  align="center">
+                    <label for="inputNome">Subtítulo do trabalho </label>
+                    <input type="text" class ="form-control " name="nome" id="inputSubtituloTrabalho">
+                </div>
+            </div>
+
+            <div class="form-row justify-content-center" >
+            
+                <div class="form-group col-4"  align="center">
+                    <label for="inputNome">Ano * </label>
+                    <input type="number" maxlength="4" class ="form-control " name="nome" id="inputAno" placeholder="Ex.:2014" required>
+                </div>
+
+                <div class="form-group col-4"  align="center">
+                    <label for="inputNome">Número de páginas: * </label>
+                    <input type="number" class ="form-control " name="nome" id="inputNumeroPaginas" placeholder="Somente números" required>
+                </div>
+            </div>
+
+            <div class="form-row justify-content-center" >
+            
+                <div class="form-group col-4"  align="center">
+                    <label for="inputNomeUltimo"> Trabalho * </label>
+                    <select class ="form-control" id="trabalho" required> 
+                        <option value="Dissertação (Mestrado)">Dissertação (Mestrado)</option>
+                        <option value="Tese (Doutorado)">Tese (Doutorado)</option>                              
+                        <option value="Tese (Livre-Docência)">Tese (Livre-Docência)</option>                            
+                    </select>
+                </div>
+
+                <div class="form-group col-4"  align="center">
+                    <label for="inputNomeUltimo"> Área de Concentração * </label>
+                    <select class ="form-control" id="areaConcentracao" required> 
+                        <option value="Cuidado em Saúde">Cuidado em Saúde</option>
+                        <option value="Enfermagem na Saúde do Adulto">Enfermagem na Saúde do Adulto</option>                               
+                        <option value="Fundamentos e Práticas de Gerenciamento em Enfermagem e em Saúde">Fundamentos e Práticas de Gerenciamento em Enfermagem e em Saúde</option>                               
+                        <option value="Cuidado em Atenção Primária em Saúde">Cuidado em Atenção Primária em Saúde</option>                               
+                        <option value="Formação Interdisciplinar em Saúde">Formação Interdisciplinar em Saúde</option>                               
+                        <option value="Enfermagem">Enfermagem</option>                              
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="row">
+
+                <h2 class="h2Form">Assuntos:</h2>
+                
+            </div>
+            <div class="row">
+
+                <p class="pForm">(Consulte o Vocabulário Controlado da USP e preencha o(s) campo(s) abaixo, de acordo
+                    com os exemplos).
+                </p>
+            
+            </div>
+            <div class="row">
+
+                <p>Ex.: 
+                    <ul>
+                        <li>Aleitamento materno</li>
+                        <li>Sistema Unificado de Saúde</li>
+                    </ul>
+                </p>
+                
+            </div>
+            <div class="form-row justify-content-center" >
+
+                <div class="form-group col-2"  align="center">
+                    <label for="inputNome">Assunto 1 *</label>
+                    <input type="text" class ="form-control " name="nome" id="inputAssunto1" required>
+                </div>
+            
+                <div class="form-group col-2" align="center">
+                        <label for="inputNomeMeio">Assunto 2</label>
+                        <input type="text" class ="form-control" name="nomeMeio" id="inputAssunto2" >
+                </div>
+
+                <div class="form-group col-2" align="center">
+                        <label for="inputNomeUltimo">Assunto 3</label>
+                        <input type="text" class ="form-control" name="nomeUltimo" id="inputAssunto3">
+                </div>
+
+                <div class="form-group col-2" align="center">
+                        <label for="inputNomeUltimo">Assunto 4</label>
+                        <input type="text" class ="form-control" name="nomeUltimo" id="inputAssunto4">
+                </div>
+
+                <div class="form-group col-2" align="center">
+                        <label for="inputNomeUltimo">Assunto 5</label>
+                        <input type="text" class ="form-control" name="nomeUltimo" id="inputAssunto5">
+                </div>
+                
+            </div>
+        </div>
+            <br>
+        <button type="submit" class="btn btn-primary">Gerar Ficha Catalográfica</button>
+    </form>
+    
+</body>
+
+
+</html>

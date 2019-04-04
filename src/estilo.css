@@ -1,0 +1,23 @@
+body {
+    padding-top: 50px;
+    display: block;
+    margin: 8px;    
+    justify-content: center;
+}
+/*
+.form-control{
+    box-align:"center";
+}
+*/
+.campoObrigatorioSpam {
+    justify-content: right;
+}
+
+.h2Form{
+    font-size: 18px;
+}
+.jumbotron{
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border: 1px solid black;
+}
