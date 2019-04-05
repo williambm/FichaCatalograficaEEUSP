@@ -18,6 +18,15 @@
         <!--insere o HTML2Canvas -->
         <script type="text/javascript" src="./src/html2canvas.js"></script>
 
+        <script>
+            //pega os dados do localstorage
+            var ficha = localStorage.getItem("tbFicha");
+            //Transforma de String para JSON 
+            ficha = JSON.parse(ficha);
+            //Teste de visualização do OBJETO             
+            console.log(ficha);
+        </script>
+
     </head>
     <body class="fichaBody">
         <h1>AUTORIZO A REPRODUÇÃO E DIVULGAÇÃO TOTAL OU PARCIAL DESTE TRABALHO, POR
@@ -39,12 +48,14 @@
         <p class="msgCatalogacao"><b>Biblioteca "Wanda de Aguiar Horta"</b></p>
         <p class="msgCatalogacao"><b>Escola de Enfermagem da Universidade de São Paulo</b></p>
         <br>
-        
-        <div class="container caixaFicha">
+
+        <div class="container ">
             <div class="row ">
-                <div class="col-sm-12" align="center" >
-                    <h1>Ficha Catalográfica da EEUSP</h1>
-                    <span class="campoObrigatorioSpam">* Campos Obrigatórios</span>
+                <div class="col-3"></div>
+                <div class="col-6 caixaFicha" >
+                    <br>
+                    <p>Ficha Catalográfica da EEUSP</p>
+                    <p>Contexto bla bla</p>
                     <br>
                 </div>
             </div>
