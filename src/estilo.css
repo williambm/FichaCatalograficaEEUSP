@@ -21,3 +21,22 @@ body {
     padding-top: 12px;
     border: 1px solid black;
 }
+
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+}
+.pFicha{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14pt; 
+}
+.msgCatalogacao{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 14pt; 
+    font: bold;
+    text-align: center;
+    margin: 0px;
+}
+.caixaFicha{
+    border: 1px solid black ;
+}
