@@ -21,7 +21,7 @@
     <!--Função de Gerar PDF-->
     <script type="text/javascript">
     
-        function genPDF(){
+        function persistObj(){
             //Cria um objeto do tipo jsPDF
             var doc = new jsPDF();
             //Coleta os values do form
@@ -51,10 +51,33 @@
             var assunto4 = document.getElementById('inputAssunto4').value;
             var assunto5 = document.getElementById('inputAssunto5').value;
 
+            var ficha = JSON.stringify({
+                nomeAluno: nomeAluno,
+                nomeMeio: nomeMeioAluno,
+                nomeUltimo: nomeUltimoAluno,
+                nomeOrientador: nomeOrientador,
+                tituloOrientador: tituloOrientador,
+                nomeCoorientador: nomeCoorientador,
+                tituloCoorientador: tituloCoorientador,
+                trabalhoTitulo: trabalhoTitulo,
+                trabalhoSubtitulo: trabalhoSubtitulo,
+                trabalhoAno: trabalhoAno,
+                trabalhoPaginas: trabalhoPaginas,
+                trabalhoTipo: trabalhoTipo,
+                trabalhoAreaConcentracao: trabalhoAreaConcentracao,
+                assunto1: assunto1,
+                assunto2: assunto2,
+                assunto3: assunto3,
+                assunto4: assunto4,
+                assunto5: assunto5
+            });
 
-            //window.open('./ficha.html');
+            //Persiste o objeto no LocalStorage
+            localStorage.setItem("tbFicha", JSON.stringify(ficha));
+
+            window.open('./ficha.html');
            
-            
+            /*
             //Formata a fonte de saída
            doc.setFont("arial");
            doc.setFontSize(12);
@@ -88,7 +111,7 @@
     </div>
     <br>
 
-    <form action="javascript:genPDF()">
+    <form action="javascript:persistObj()">
         <div class="jumbotron">
             <div class="row">
 
