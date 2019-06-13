@@ -47,7 +47,7 @@
         <br><br><br><br><br>
         <br><br><br><br><br>
         <br><br><br><br><br>
-        <br><br><br><br><br>
+        <br><br>
 
         <p class="msgCatalogacao"><b>Catalogação na Publicação (CIP)</b></p>        
         <p class="msgCatalogacao"><b>Biblioteca "Wanda de Aguiar Horta"</b></p>
@@ -56,17 +56,64 @@
 
         <div class="container ">
             <div class="row ">
-                <div class="col-3"></div>
-                <div class="col-6 caixaFicha" >
+                <div class="col-2"></div>
+                <div class="col-8 caixaFicha" >
                     <br>
-                    <p>Ficha Catalográfica da EEUSP</p>
-                    <p>Contexto bla bla</p>
-                    <script>document.write(objeto.nomeAluno);</script>
+                    <p id="nome"></p>
+                    <p id="tituloSubtitulo"></p>
+                    <p id="paginas"></p>                   
+                    <p id="tipoTese"></p>                   
+                    <p id="orientador"></p>                   
+                    <p id="coorientador"></p>                   
+                    <p id="areaConcentra"></p>                   
+                    <p id="assunto"></p>                   
                     <br>
                 </div>
             </div>
         </div>
-
+        <script>
+            //Primeira Linha - Nome
+            document.getElementById("nome").innerHTML = objeto.nomeUltimo + ', '
+            +objeto.nomeAluno +' '+objeto.nomeMeio;
+            //Segunda Linha - titulo / subtitulo / nome / ano
+            document.getElementById("tituloSubtitulo").innerHTML = objeto.trabalhoTitulo+ ': '
+            +objeto.trabalhoSubtitulo + ' / '+ objeto.nomeAluno+ ' '+ objeto.nomeMeio+ ' '
+            +objeto.nomeUltimo +'. São Paulo, '+ objeto.trabalhoAno+ '.';
+            //Terceira Linha - paginas
+            document.getElementById("paginas").innerHTML = objeto.trabalhoPaginas + ' p.';
+            //Quarta Linha - tipo da tese
+            document.getElementById("tipoTese").innerHTML = objeto.trabalhoTipo 
+            + ' - Escola de Enfermagem da Universidade de São Paulo.';
+            //Quinta Linha - orientador
+            document.getElementById("orientador").innerHTML = 'Orientador(a): '+ objeto.tituloOrientador 
+            + ' '+ objeto.nomeOrientador;
+            //Sexta Linha - Coorientador
+            document.getElementById("coorientador").innerHTML = 'Coorientador(a): '+ objeto.tituloCoorientador 
+            + ' '+ objeto.nomeCoorientador;
+            //Sétima Linha - Área de Concentração
+            document.getElementById("areaConcentra").innerHTML = 'Área de concentração: '
+            + objeto.trabalhoAreaConcentracao;
+            //Oitava Linha - Assuntos
+                //Fluxo de controle da operação dos assuntos
+                var assunto = '';
+                if(objeto.assunto1 > ''){
+                    assunto = '1. '
+                    + objeto.assunto1;                
+                }                
+                if(objeto.assunto2 > ''){
+                    assunto +=' 2. '+objeto.assunto2;                    
+                }
+                if(objeto.assunto3 > ''){
+                    assunto +=' 3. '+objeto.assunto3;                    
+                }
+                if(objeto.assunto4 > ''){
+                    assunto +=' 4. '+objeto.assunto4;                    
+                }
+                if(objeto.assunto5 > ''){
+                    assunto +=' 5. '+objeto.assunto5;                    
+                }
+                document.getElementById("assunto").innerHTML = assunto;
+        </script>
     </body>
      <!--insere o HTML2Canvas -->
      <script type="text/javascript" src="./ficha.js"></script>

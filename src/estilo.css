@@ -1,7 +1,7 @@
 body {
     padding-top: 50px;
     display: block;
-    margin: 8px;    
+    margin: 8px;      
     justify-content: center;
 }
 /*
@@ -24,19 +24,35 @@ body {
 
 h1{
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 18pt;
+    font-size: 17pt;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 110px;
+    padding-right: 80px;
 }
 .pFicha{
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 14pt; 
+    font-size: 16pt; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 110px;
+    padding-right: 80px;
 }
 .msgCatalogacao{
     font-family:'Times New Roman', Times, serif;
-    font-size: 14pt; 
+    font-size: 15pt; 
     font: bold;
     text-align: center;
     margin: 0px;
 }
 .caixaFicha{
     border: 1px solid black ;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 14pt;
+}
+#nome{
+    margin-bottom: 1px;
+}
+#tituloSubtitulo{
+    margin-bottom: 1px;
 }
