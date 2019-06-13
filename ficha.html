@@ -22,10 +22,14 @@
             //pega os dados do localstorage
             var ficha = localStorage.getItem("tbFicha");
             //Transforma de String para JSON 
-            ficha = JSON.parse(ficha);
+            var fichaOBJ = JSON.parse(ficha);
             //Teste de visualização do OBJETO             
-            console.log(ficha);
-            console.log('Teste de GIT')
+                //console.log(ficha);
+                //console.log(fichaOBJ);
+            //AUA - neste segundo PARSE o objeto fica Okay, acerta o parse de vez
+            objeto = JSON.parse(fichaOBJ);
+            //Teste de visualização de atributo do objeto
+                //console.log(objeto.nomeAluno);
         </script>
 
     </head>
@@ -57,10 +61,13 @@
                     <br>
                     <p>Ficha Catalográfica da EEUSP</p>
                     <p>Contexto bla bla</p>
+                    <script>document.write(objeto.nomeAluno);</script>
                     <br>
                 </div>
             </div>
         </div>
 
     </body>
+     <!--insere o HTML2Canvas -->
+     <script type="text/javascript" src="./ficha.js"></script>
 </html>
