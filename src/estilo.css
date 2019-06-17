@@ -48,11 +48,35 @@ h1{
 .caixaFicha{
     border: 1px solid black ;
     font-family:'Times New Roman', Times, serif;
-    font-size: 14pt;
+    font-size: 15pt;
+    padding-left: 30px;
 }
 #nome{
     margin-bottom: 1px;
 }
 #tituloSubtitulo{
     margin-bottom: 1px;
+    text-indent: 25px;
+}
+#paginas{    
+    text-indent: 25px;
+}
+#tipoTese{
+    margin-bottom: 1px;
+    text-indent: 25px;
+}
+#orientador{
+    margin-bottom: 1px;
+    text-indent: 25px;
+}
+#coorientador{
+    margin-bottom: 1px;
+    text-indent: 25px;
+}
+#areaConcentra{    
+    text-indent: 25px;
+}
+#assunto{
+    margin-bottom: 1px;
+    text-indent: 25px;
 }

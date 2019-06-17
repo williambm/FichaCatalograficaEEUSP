@@ -35,30 +35,43 @@
             var doc = new jsPDF();
             //Coleta os values do form
             //nome do aluno
-            var nomeAluno = document.getElementById('inputNome').value;
-            var nomeMeioAluno = document.getElementById('inputNomeMeio').value;
-            var nomeUltimoAluno = document.getElementById('inputNomeUltimo').value;
+            var nomeAluno = maiusc(document.getElementById('inputNome').value);
+            var nomeMeioAluno = maiusc(document.getElementById('inputNomeMeio').value);
+            var nomeUltimoAluno = maiusc(document.getElementById('inputNomeUltimo').value);
 
             //Informações do orientador E coorientador
-            var nomeOrientador = document.getElementById('inputNomeOrientador').value;
+            var nomeOrientador = maiusc(document.getElementById('inputNomeOrientador').value);
             var tituloOrientador = document.getElementById('tituloOrientador').value;
-            var nomeCoorientador = document.getElementById('inputNomeCoorientador').value;
+            var nomeCoorientador = maiusc(document.getElementById('inputNomeCoorientador').value);
             var tituloCoorientador = document.getElementById('tituloCoorientador').value;
 
             //Informações da Obra
-            var trabalhoTitulo = document.getElementById('inputTituloTrabalho').value;
-            var trabalhoSubtitulo = document.getElementById('inputSubtituloTrabalho').value;
+            var trabalhoTitulo = maiuscPalavra(document.getElementById('inputTituloTrabalho').value);
+            var trabalhoSubtitulo = maiuscPalavra(document.getElementById('inputSubtituloTrabalho').value);
             var trabalhoAno = document.getElementById('inputAno').value;
             var trabalhoPaginas = document.getElementById('inputNumeroPaginas').value;
             var trabalhoTipo = document.getElementById('trabalho').value;
             var trabalhoAreaConcentracao = document.getElementById('areaConcentracao').value;
 
             //Assuntos
-            var assunto1 = document.getElementById('inputAssunto1').value;
-            var assunto2 = document.getElementById('inputAssunto2').value;
-            var assunto3 = document.getElementById('inputAssunto3').value;
-            var assunto4 = document.getElementById('inputAssunto4').value;
-            var assunto5 = document.getElementById('inputAssunto5').value;
+            var assunto1 = maiusc(document.getElementById('inputAssunto1').value);
+            var assunto2 = maiusc(document.getElementById('inputAssunto2').value);
+            var assunto3 = maiusc(document.getElementById('inputAssunto3').value);
+            var assunto4 = maiusc(document.getElementById('inputAssunto4').value);
+            var assunto5 = maiusc(document.getElementById('inputAssunto5').value);
+
+            //Função que coloca a primeira letra de cada palavra em maiuscula em uma frase
+            function maiusc(palavra){
+                this.palavra = palavra;                
+                palavra = palavra.toLowerCase().replace(/(?:^|\s)\S/g, function(a) 
+                { return a.toUpperCase(); });
+                console.log(palavra);
+                return palavra;
+            }
+            //Função que coloca apenas a primeira letra da palavra em maiuscula
+            //function maiuscPalavra(palavra){
+               //implementar
+            //}
 
             //Cria o JSON
             var ficha = JSON.stringify({
