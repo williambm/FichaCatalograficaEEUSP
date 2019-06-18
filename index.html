@@ -46,19 +46,19 @@
             var tituloCoorientador = document.getElementById('tituloCoorientador').value;
 
             //Informações da Obra
-            var trabalhoTitulo = maiusc(document.getElementById('inputTituloTrabalho').value);
-            var trabalhoSubtitulo = maiusc(document.getElementById('inputSubtituloTrabalho').value);
+            var trabalhoTitulo = maiuscPalavra(document.getElementById('inputTituloTrabalho').value);
+            var trabalhoSubtitulo = maiuscPalavra(document.getElementById('inputSubtituloTrabalho').value);
             var trabalhoAno = document.getElementById('inputAno').value;
             var trabalhoPaginas = document.getElementById('inputNumeroPaginas').value;
             var trabalhoTipo = document.getElementById('trabalho').value;
-            var trabalhoAreaConcentracao = document.getElementById('areaConcentracao').value;
+            var trabalhoAreaConcentracao = maiuscPalavra(document.getElementById('areaConcentracao').value);
 
             //Assuntos
-            var assunto1 = maiusc(document.getElementById('inputAssunto1').value);
-            var assunto2 = maiusc(document.getElementById('inputAssunto2').value);
-            var assunto3 = maiusc(document.getElementById('inputAssunto3').value);
-            var assunto4 = maiusc(document.getElementById('inputAssunto4').value);
-            var assunto5 = maiusc(document.getElementById('inputAssunto5').value);
+            var assunto1 = maiuscPalavra(document.getElementById('inputAssunto1').value);
+            var assunto2 = maiuscPalavra(document.getElementById('inputAssunto2').value);
+            var assunto3 = maiuscPalavra(document.getElementById('inputAssunto3').value);
+            var assunto4 = maiuscPalavra(document.getElementById('inputAssunto4').value);
+            var assunto5 = maiuscPalavra(document.getElementById('inputAssunto5').value);
 
             //Função que coloca a primeira letra de cada palavra em maiuscula em uma frase
             function maiusc(palavra){
@@ -69,9 +69,15 @@
                 return palavra;
             }
             //Função que coloca apenas a primeira letra da palavra em maiuscula
-            //function maiuscPalavra(palavra){
-               //implementar
-            //}
+            function maiuscPalavra(palavra){
+                this.palavra = palavra;
+                var palavraIni = palavra.split(' ');
+                var resultado = palavraIni[0].substring(0,1).toUpperCase().concat(palavraIni[0].substring(1));
+                for (i=1;i < palavraIni.length;i ++){
+                    resultado +=' '+palavraIni[i];
+                }
+                return resultado;
+            }
 
             //Cria o JSON
             var ficha = JSON.stringify({
