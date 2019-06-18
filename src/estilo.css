@@ -80,3 +80,12 @@ h1{
     margin-bottom: 1px;
     text-indent: 25px;
 }
+.bodyIndex{
+    background: url(../src/bg-fundo.jpg) transparent;
+}
+.cabecalho{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 10px;
+}
