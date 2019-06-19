@@ -21,18 +21,12 @@
     crossorigin="anonymous"></script>
     <!--script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
 
-    <!--insere o JSPDF -->
-    <script type="text/javascript" src="./src/jspdf.min.js"></script>
-
-    <!--insere o HTML2Canvas -->
-    <script type="text/javascript" src="./src/html2canvas.js"></script>
-    
+        
     <!--Função de Gerar PDF-->
     <script type="text/javascript">
     
         function persistObj(){
-            //Cria um objeto do tipo jsPDF
-            var doc = new jsPDF();
+            
             //Coleta os values do form
             //nome do aluno
             var nomeAluno = maiusc(document.getElementById('inputNome').value);
@@ -103,27 +97,7 @@
 
             //Persiste o objeto no LocalStorage
             localStorage.setItem("tbFicha", JSON.stringify(ficha));
-
-            window.open('./ficha.html');
-           
-            /*
-            //Formata a fonte de saída
-           doc.setFont("arial");
-           doc.setFontSize(12);
-           doc.text (30,20,nomeAluno +" , " + nomeMeioAluno +" , " + nomeUltimoAluno);
-           doc.text (40,20,nomeOrientador +" , " + tituloOrientador);
-           doc.save('a.pdf');
-            /* bloco comentador para testar 
-                //Pegar o elemento do HTML EXATAMENTE como ele é
-                html2canvas(document.body).then(function(canvas) {
-
-                    //Cria uma imagem do screenshot capturado
-                    var img = canvas.toDataURL("image/png");
-                    //Adiciona a imagem no PDF e passa o tamanho.
-                    doc.addImage(img, 'JPEG',20,20);
-                    doc.save('Teste.pdf'); // salva PDF
-                });
-            */            
+            window.open('./ficha.html');                      
         }
     </script>
 

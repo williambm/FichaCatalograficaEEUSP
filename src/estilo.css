@@ -23,16 +23,24 @@ body {
 }
 
 h1{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 17pt;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 15pt;
     margin-left: auto;
     margin-right: auto;
     padding-left: 110px;
     padding-right: 80px;
 }
+/*
+.antesFicha{
+    margin-right: 10px;
+}
+.depoisFicha{
+    margin-left: 5px;
+}
+*/
 .pFicha{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 16pt; 
+    font-family:'Times New Roman', Times, serif;
+    font-size: 15pt; 
     margin-left: auto;
     margin-right: auto;
     padding-left: 110px;
@@ -48,8 +56,11 @@ h1{
 .caixaFicha{
     border: 1px solid black ;
     font-family:'Times New Roman', Times, serif;
-    font-size: 15pt;
-    padding-left: 30px;
+    font-size: 15pt; 
+    margin: auto;
+    max-width: 17cm;
+    min-height: 10cm;
+    max-height: 11cm;
 }
 #nome{
     margin-bottom: 1px;
