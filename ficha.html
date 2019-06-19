@@ -63,7 +63,7 @@
                     <p id="orientador"></p>                   
                     <p id="coorientador"></p>                   
                     <p id="areaConcentra"></p>                   
-                    <p id="assunto"></p>                   
+                    <p id="assunto"></p>              
                     <br>
                 </div>
             </div>
@@ -92,24 +92,37 @@
             + objeto.trabalhoAreaConcentracao;
             //Oitava Linha - Assuntos
                 //Fluxo de controle da operação dos assuntos
-                var assunto = '';
-                if(objeto.assunto1 > ''){
-                    assunto = '1. '
-                    + objeto.assunto1;                
-                }                
-                if(objeto.assunto2 > ''){
-                    assunto +=' 2. '+objeto.assunto2;                    
-                }
-                if(objeto.assunto3 > ''){
-                    assunto +=' 3. '+objeto.assunto3;                    
-                }
-                if(objeto.assunto4 > ''){
-                    assunto +=' 4. '+objeto.assunto4;                    
-                }
-                if(objeto.assunto5 > ''){
-                    assunto +=' 5. '+objeto.assunto5;                    
+                var assunto = '';  
+                var teste = true; 
+                while( teste === true){                 
+                    if(objeto.assunto1 > ''){
+                        assunto = '1. '
+                        + objeto.assunto1 +'.';                
+                    }                
+                    if(objeto.assunto2 > ''){
+                        assunto +=' 2. '+objeto.assunto2 +'.';                    
+                    }else {
+                        teste = false;
+                    }
+                    if(objeto.assunto3 > ''){
+                        assunto +=' 3. '+objeto.assunto3 +'.';                    
+                    }else {
+                        teste = false;
+                    }
+                    if(objeto.assunto4 > ''){
+                        assunto +=' 4. '+objeto.assunto4 +'.';                    
+                    }else {
+                        teste = false;
+                    }
+                    if(objeto.assunto5 > ''){
+                        assunto +=' 5. '+objeto.assunto5 +'.';                    
+                    }else {
+                        teste = false;
+                    }
+                    assunto +=' I. Título.';
                 }
                 document.getElementById("assunto").innerHTML = assunto;
+                //document.write();
         </script>
     </body>
 </html>
