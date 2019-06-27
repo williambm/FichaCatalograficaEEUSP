@@ -59,8 +59,8 @@ h1{
     font-size: 15pt; 
     margin: auto;
     max-width: 17cm;
-    min-height: 10cm;
-    max-height: 11cm;
+    min-height: 10.15cm; 
+    max-height: 283.5px;
 }
 #nome{
     margin-bottom: 1px;
@@ -99,4 +99,9 @@ h1{
     margin-bottom: 20px;
     background: #fff;
     padding: 10px;
+}
+.bibliotecariaResponsavel{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 15pt; 
+    margin: auto;
 }
