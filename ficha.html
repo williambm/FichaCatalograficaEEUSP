@@ -96,34 +96,23 @@
             + objeto.trabalhoAreaConcentracao;
             //Oitava Linha - Assuntos
                 //Fluxo de controle da operação dos assuntos
-                var assunto = '';  
-                var teste = true; 
-                while( teste === true){                 
-                    if(objeto.assunto1 > ''){
-                        assunto = '1. '
-                        + objeto.assunto1 +'.';                
-                    }                
-                    if(objeto.assunto2 > ''){
-                        assunto +=' 2. '+objeto.assunto2 +'.';                    
-                    }else {
-                        teste = false;
-                    }
-                    if(objeto.assunto3 > ''){
-                        assunto +=' 3. '+objeto.assunto3 +'.';                    
-                    }else {
-                        teste = false;
-                    }
-                    if(objeto.assunto4 > ''){
-                        assunto +=' 4. '+objeto.assunto4 +'.';                    
-                    }else {
-                        teste = false;
-                    }
-                    if(objeto.assunto5 > ''){
-                        assunto +=' 5. '+objeto.assunto5 +'.';                    
-                    }else {
-                        teste = false;
-                    }
-                    assunto +=' I. Título.';
+                var assunto = ''; 
+                if(objeto.assunto1 > '' & objeto.assunto2 > '' & objeto.assunto3 > '' &objeto.assunto4 > '' & objeto.assunto5 > ''){
+                    assunto += '1. '+ objeto.assunto1 +'. 2. '+objeto.assunto2 +'. 3. '+objeto.assunto3 +'. 4. '
+                    +objeto.assunto4 +'. 5. '+objeto.assunto5 +'. I. Título.';                    
+                }
+                else if(objeto.assunto1 > '' & objeto.assunto2 > '' & objeto.assunto3 > '' &objeto.assunto4 > ''){
+                    assunto += '1. '+ objeto.assunto1 +'. 2. '+objeto.assunto2 +'. 3. '+objeto.assunto3 +'. 4. '
+                    +objeto.assunto4 +'. I. Título.';
+                }
+                else if(objeto.assunto1 > '' & objeto.assunto2 > '' & objeto.assunto3 > ''){
+                    assunto += '1. '+ objeto.assunto1 +'. 2. '+objeto.assunto2 +'. 3. '+objeto.assunto3 +'. I. Título.';
+                }
+                else if(objeto.assunto1 > '' & objeto.assunto2 > ''){
+                    assunto += '1. '+ objeto.assunto1 +'. 2. '+objeto.assunto2 +'. I. Título.';
+                }
+                else if(objeto.assunto1 > ''){
+                    assunto += '1. '+ objeto.assunto1 +'. I. Título.';
                 }
                 document.getElementById("assunto").innerHTML = assunto;
                

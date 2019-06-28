@@ -19,87 +19,12 @@
     <script  src="https://code.jquery.com/jquery-3.4.0.min.js"
     integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
     crossorigin="anonymous"></script>
-    <!--script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+    <!--script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->      
 
-        
-    <!--Função de Gerar PDF-->
     <script type="text/javascript">
-    
-        function persistObj(){
-            
-            //Coleta os values do form
-            //nome do aluno
-            var nomeAluno = maiusc(document.getElementById('inputNome').value);
-            var nomeMeioAluno = maiusc(document.getElementById('inputNomeMeio').value);
-            var nomeUltimoAluno = maiusc(document.getElementById('inputNomeUltimo').value);
-
-            //Informações do orientador E coorientador
-            var nomeOrientador = maiusc(document.getElementById('inputNomeOrientador').value);
-            var tituloOrientador = document.getElementById('tituloOrientador').value;
-            var nomeCoorientador = maiusc(document.getElementById('inputNomeCoorientador').value);
-            var tituloCoorientador = document.getElementById('tituloCoorientador').value;
-
-            //Informações da Obra
-            var trabalhoTitulo = maiuscPalavra(document.getElementById('inputTituloTrabalho').value);
-            var trabalhoSubtitulo = document.getElementById('inputSubtituloTrabalho').value;
-            var trabalhoAno = document.getElementById('inputAno').value;
-            var trabalhoPaginas = document.getElementById('inputNumeroPaginas').value;
-            var trabalhoTipo = document.getElementById('trabalho').value;
-            var trabalhoAreaConcentracao = maiuscPalavra(document.getElementById('areaConcentracao').value);
-
-            //Assuntos
-            var assunto1 = maiuscPalavra(document.getElementById('inputAssunto1').value);
-            var assunto2 = maiuscPalavra(document.getElementById('inputAssunto2').value);
-            var assunto3 = maiuscPalavra(document.getElementById('inputAssunto3').value);
-            var assunto4 = maiuscPalavra(document.getElementById('inputAssunto4').value);
-            var assunto5 = maiuscPalavra(document.getElementById('inputAssunto5').value);
-
-            //Função que coloca a primeira letra de cada palavra em maiuscula em uma frase
-            function maiusc(palavra){
-                this.palavra = palavra;                
-                palavra = palavra.toLowerCase().replace(/(?:^|\s)\S/g, function(a) 
-                { return a.toUpperCase(); });
-                console.log(palavra);
-                return palavra;
-            }
-            //Função que coloca apenas a primeira letra da palavra em maiuscula
-            function maiuscPalavra(palavra){
-                this.palavra = palavra;
-                var palavraIni = palavra.split(' ');
-                var resultado = palavraIni[0].substring(0,1).toUpperCase().concat(palavraIni[0].substring(1));
-                for (i=1;i < palavraIni.length;i ++){
-                    resultado +=' '+palavraIni[i];
-                }
-                return resultado;
-            }
-
-            //Cria o JSON
-            var ficha = JSON.stringify({
-                nomeAluno: nomeAluno,
-                nomeMeio: nomeMeioAluno,
-                nomeUltimo: nomeUltimoAluno,
-                nomeOrientador: nomeOrientador,
-                tituloOrientador: tituloOrientador,
-                nomeCoorientador: nomeCoorientador,
-                tituloCoorientador: tituloCoorientador,
-                trabalhoTitulo: trabalhoTitulo,
-                trabalhoSubtitulo: trabalhoSubtitulo,
-                trabalhoAno: trabalhoAno,
-                trabalhoPaginas: trabalhoPaginas,
-                trabalhoTipo: trabalhoTipo,
-                trabalhoAreaConcentracao: trabalhoAreaConcentracao,
-                assunto1: assunto1,
-                assunto2: assunto2,
-                assunto3: assunto3,
-                assunto4: assunto4,
-                assunto5: assunto5
-            });
-
-            //Persiste o objeto no LocalStorage
-            localStorage.setItem("tbFicha", JSON.stringify(ficha));
-            window.open('./ficha.html');                      
-        }
+        localStorage.clear();
     </script>
+    
 
 </head>
 <body class="bodyIndex">
@@ -302,6 +227,84 @@
         </div>
             <br>
         <button type="submit" class="btn btn-primary">Gerar Ficha Catalográfica</button>
-    </form>    
+    </form>  
+    <!--Função de Criar OBJ-->
+    <script type="text/javascript">
+    
+        function persistObj(){
+            
+            //Coleta os values do form
+            //nome do aluno
+            var nomeAluno = maiusc(document.getElementById('inputNome').value);
+            var nomeMeioAluno = maiusc(document.getElementById('inputNomeMeio').value);
+            var nomeUltimoAluno = maiusc(document.getElementById('inputNomeUltimo').value);
+
+            //Informações do orientador E coorientador
+            var nomeOrientador = maiusc(document.getElementById('inputNomeOrientador').value);
+            var tituloOrientador = document.getElementById('tituloOrientador').value;
+            var nomeCoorientador = maiusc(document.getElementById('inputNomeCoorientador').value);
+            var tituloCoorientador = document.getElementById('tituloCoorientador').value;
+
+            //Informações da Obra
+            var trabalhoTitulo = maiuscPalavra(document.getElementById('inputTituloTrabalho').value);
+            var trabalhoSubtitulo = document.getElementById('inputSubtituloTrabalho').value;
+            var trabalhoAno = document.getElementById('inputAno').value;
+            var trabalhoPaginas = document.getElementById('inputNumeroPaginas').value;
+            var trabalhoTipo = document.getElementById('trabalho').value;
+            var trabalhoAreaConcentracao = maiuscPalavra(document.getElementById('areaConcentracao').value);
+
+            //Assuntos
+            var assunto1 = maiuscPalavra(document.getElementById('inputAssunto1').value);
+            var assunto2 = maiuscPalavra(document.getElementById('inputAssunto2').value);
+            var assunto3 = maiuscPalavra(document.getElementById('inputAssunto3').value);
+            var assunto4 = maiuscPalavra(document.getElementById('inputAssunto4').value);
+            var assunto5 = maiuscPalavra(document.getElementById('inputAssunto5').value);
+
+            //Função que coloca a primeira letra de cada palavra em maiuscula em uma frase
+            function maiusc(palavra){
+                this.palavra = palavra;                
+                palavra = palavra.toLowerCase().replace(/(?:^|\s)\S/g, function(a) 
+                { return a.toUpperCase(); });
+                console.log(palavra);
+                return palavra;
+            }
+            //Função que coloca apenas a primeira letra da palavra em maiuscula
+            function maiuscPalavra(palavra){
+                this.palavra = palavra;
+                var palavraIni = palavra.split(' ');
+                var resultado = palavraIni[0].substring(0,1).toUpperCase().concat(palavraIni[0].substring(1));
+                for (i=1;i < palavraIni.length;i ++){
+                    resultado +=' '+palavraIni[i];
+                }
+                return resultado;
+            }
+
+            //Cria o JSON
+            var ficha = JSON.stringify({
+                nomeAluno: nomeAluno,
+                nomeMeio: nomeMeioAluno,
+                nomeUltimo: nomeUltimoAluno,
+                nomeOrientador: nomeOrientador,
+                tituloOrientador: tituloOrientador,
+                nomeCoorientador: nomeCoorientador,
+                tituloCoorientador: tituloCoorientador,
+                trabalhoTitulo: trabalhoTitulo,
+                trabalhoSubtitulo: trabalhoSubtitulo,
+                trabalhoAno: trabalhoAno,
+                trabalhoPaginas: trabalhoPaginas,
+                trabalhoTipo: trabalhoTipo,
+                trabalhoAreaConcentracao: trabalhoAreaConcentracao,
+                assunto1: assunto1,
+                assunto2: assunto2,
+                assunto3: assunto3,
+                assunto4: assunto4,
+                assunto5: assunto5
+            });
+
+            //Persiste o objeto no LocalStorage
+            localStorage.setItem("tbFicha", JSON.stringify(ficha));
+            window.open('./ficha.html');                      
+        }
+    </script>  
 </body>
 </html>
