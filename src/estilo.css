@@ -52,16 +52,17 @@ h1{
     font: bold;
     text-align: center;
     margin: 0px;
+    line-height: 1.7rem;
 }
 .caixaFicha{
     border: 1px solid black ;
     font-family:'Times New Roman', Times, serif;
-    font-size: 15pt; 
+    font-size: 14pt; 
     margin: auto;
     max-width: 17cm;
     min-height: 10.15cm; 
     max-height: 283.5px;
-    line-height: 1.45;
+    line-height: 1.7rem;
 }
 #nome{
     margin-bottom: 1px;    
@@ -72,7 +73,7 @@ h1{
 }
 #paginas{    
     text-indent: 25px;
-    margin-bottom: 1px;    
+    margin-bottom: 8px;    
 }
 #tipoTese{
     margin-bottom: 1px;
@@ -88,7 +89,7 @@ h1{
 }
 #areaConcentra{    
     text-indent: 25px;
-    margin-bottom: 1px;    
+    margin-bottom: 8px;    
 }
 #assunto{
     margin-bottom: 1px;
