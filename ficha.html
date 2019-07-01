@@ -57,7 +57,7 @@
                     <p id="tituloSubtitulo"></p>
                     <p id="paginas"></p>                   
                     <p id="tipoTese"></p>                   
-                    <p id="orientador"></p>                   
+                    <p id="orientador"></p>                                   
                     <p id="coorientador"></p>                   
                     <p id="areaConcentra"></p>                   
                     <p id="assunto"></p>              
@@ -76,21 +76,29 @@
             //Primeira Linha - Nome
             document.getElementById("nome").innerHTML = objeto.nomeUltimo + ', '
             +objeto.nomeAluno +' '+objeto.nomeMeio;
+
             //Segunda Linha - titulo / subtitulo / nome / ano
             document.getElementById("tituloSubtitulo").innerHTML = objeto.trabalhoTitulo+ ': '
             +objeto.trabalhoSubtitulo + ' / '+ objeto.nomeAluno+ ' '+ objeto.nomeMeio+ ' '
             +objeto.nomeUltimo +'. São Paulo, '+ objeto.trabalhoAno+ '.';
+
             //Terceira Linha - paginas
             document.getElementById("paginas").innerHTML = objeto.trabalhoPaginas + ' p.';
+
             //Quarta Linha - tipo da tese
             document.getElementById("tipoTese").innerHTML = objeto.trabalhoTipo 
             + ' - Escola de Enfermagem da Universidade de São Paulo.';
+
             //Quinta Linha - orientador
             document.getElementById("orientador").innerHTML = 'Orientador(a): '+ objeto.tituloOrientador 
             + ' '+ objeto.nomeOrientador;
-            //Sexta Linha - Coorientador
-            document.getElementById("coorientador").innerHTML = 'Coorientador(a): '+ objeto.tituloCoorientador 
-            + ' '+ objeto.nomeCoorientador;
+
+            //Sexta Linha - Coorientador - Como não é obrigatório checa se o JSON possui informações sobre
+            if(objeto.nomeCoorientador >''){
+                document.getElementById("coorientador").innerHTML = 'Coorientador(a): '+ objeto.tituloCoorientador 
+                + ' '+ objeto.nomeCoorientador;
+            }
+            
             //Sétima Linha - Área de Concentração
             document.getElementById("areaConcentra").innerHTML = 'Área de concentração: '
             + objeto.trabalhoAreaConcentracao;
