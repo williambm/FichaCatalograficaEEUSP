@@ -55,11 +55,12 @@ h1{
     line-height: 1.7rem;
 }
 .caixaFicha{
+    box-sizing: border-box;
     border: 1px solid black ;
     font-family:'Times New Roman', Times, serif;
     font-size: 14pt; 
     margin: auto;
-    max-width: 17cm;
+    width: 12.5cm !important;
     min-height: 10.15cm; 
     max-height: 283.5px;
     line-height: 1.7rem;
